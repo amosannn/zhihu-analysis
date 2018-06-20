@@ -9,10 +9,10 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'zhihu'
+BOT_NAME = 'zhihuuser'
 
-SPIDER_MODULES = ['zhihu.spiders']
-NEWSPIDER_MODULE = 'zhihu.spiders'
+SPIDER_MODULES = ['zhihuuser.spiders']
+NEWSPIDER_MODULE = 'zhihuuser.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -65,7 +65,7 @@ DOWNLOAD_DELAY = 3
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'zhihu.pipelines.ZhihuPipeline': 300,
+    'zhihuuser.pipelines.ZhihuPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

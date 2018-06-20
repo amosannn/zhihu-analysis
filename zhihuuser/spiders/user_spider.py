@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import json
-from zhihu.items import ZhihuItem
+from zhihuuser.items import ZhihuItem
 from scrapy import Request, Spider
 
 class ZhihuuserSpider(Spider):
-    name = 'zhihu'
+    name = 'zhihuuser'
     allowed_domains = ["www.zhihu.com"]
     start_urls = ["https://www.zhihu.com/"]
     start_user = "lin-jia-sheng-96"
@@ -27,7 +27,7 @@ class ZhihuuserSpider(Spider):
         item['user_avatar'] = result['avatar_url_template'].format(size='xl')
         item['user_url'] = 'https://www.zhihu.com/people/' + result['url_token']
         item['locations'] = result['locations'][0]['name'] if len(result['locations']) else ''
-        item['voteup_count'] = result['voteup_count'] if result['voteup_count'] else 0
+        item['voteup_count'] = result['voteup_count'] 
         item['thanked_count'] = result['thanked_count'] if result['thanked_count'] else 0
         item['follower_count'] = result['follower_count'] if result['follower_count'] else 0
         item['following_count'] = result['following_count'] if result['following_count'] else 0
